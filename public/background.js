@@ -1,23 +1,6 @@
 // Cosytales Productivity — MV3 Service Worker
-// Handles toolbar-icon clicks, timer alarms, audio playback via the Offscreen API,
-// and desktop notifications. Runs in the background regardless of which tab is active.
-
-// ── Toolbar icon click — open or focus the app tab ──────────────────────────
-
-const APP_URL = chrome.runtime.getURL("index.html");
-
-chrome.action.onClicked.addListener(async () => {
-  // If the app is already open in a tab, just focus it; otherwise open a new one.
-  const [existing] = await chrome.tabs.query({ url: APP_URL });
-  if (existing?.id != null) {
-    await chrome.tabs.update(existing.id, { active: true });
-    if (existing.windowId != null) {
-      await chrome.windows.update(existing.windowId, { focused: true });
-    }
-  } else {
-    chrome.tabs.create({ url: APP_URL });
-  }
-});
+// Handles timer alarms, audio playback via the Offscreen API, and desktop notifications.
+// Runs in the background regardless of which tab is active.
 
 const ALARM_NAME = "timerEnd";
 

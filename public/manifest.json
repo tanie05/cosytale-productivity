@@ -8,16 +8,11 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "permissions": ["storage", "alarms", "offscreen", "notifications", "tabs"],
-  "action": {
-    "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
-    },
-    "default_title": "Cosytales Productivity"
-  },
+  "permissions": ["storage", "alarms", "offscreen", "notifications"],
   "background": {
     "service_worker": "background.js"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
   }
 }
