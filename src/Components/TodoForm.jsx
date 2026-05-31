@@ -79,7 +79,7 @@ function TodoForm() {
 
   return (
     <div className="todo-wrapper">
-      <h2 className="todo-heading">my todos</h2>
+      <h2 className="todo-heading">my little goals ♡</h2>
 
       <form onSubmit={addTodo} className="todo-form">
         <input

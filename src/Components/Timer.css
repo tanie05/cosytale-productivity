@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
-
 .timer-container {
   display: flex;
   flex-direction: column;
@@ -93,7 +91,7 @@
 
 .ring-progress {
   fill: none;
-  stroke: #C1D96A;
+  stroke: #a8c47a;
   stroke-width: 10;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.9s linear;
@@ -105,6 +103,7 @@
   color: #403027;
   letter-spacing: 2px;
   font-variant-numeric: tabular-nums;
+  font-family: 'Baloo 2', sans-serif;
   z-index: 1;
 }
 
@@ -135,7 +134,7 @@
 }
 
 .start-btn {
-  background: #C1D96A;
+  background: #a8c47a;
   color: #403027;
 }
 
