@@ -1,0 +1,39 @@
+.landingImg{
+}
+
+.landing-parent-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cad062;
+    height: 98vh;
+    background-image: url("./../assets/cosytales/landingBG.png");
+}
+
+.landingBtn{
+    background-color: #fff0e6;
+    border-radius: 50px;
+    color: #7a5c44;
+    border: 2.5px solid #d4a882;
+    padding: 12px 28px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 12px rgba(157, 127, 96, 0.25);
+    transition: all 0.2s ease;
+}
+
+.landingBtn:hover{
+    background-color: #d4a882;
+    color: white;
+    border-color: #d4a882;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(157, 127, 96, 0.35);
+}
+
+.landingBtn:active{
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(157, 127, 96, 0.25);
+}

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+/* ── Layout ── */
+.dashboard {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: #fdf6ec;
+  font-family: 'Nunito', sans-serif;
+  overflow-y: hidden;
+}
+
+.dashboard-quote-bar {
+  background: #fffaf3;
+  padding: 14px 32px;
+  text-align: center;
+}
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  gap: 24px;
+  padding: 28px 32px;
+  align-items: flex-start;
+}
+
+.todo-panel {
+  flex: 2;
+}
+
+.side-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 280px;
+}
+
+/* ── GIF card ── */
+.gif-card {
+  background: #fffaf3;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(64, 48, 39, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 16px 14px;
+  transition: border-color 0.4s ease;
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+.gif-card--working {
+  border-color: #C1D96A;
+  box-shadow: 0 4px 24px rgba(193, 217, 106, 0.25);
+}
+
+.gif-card--break {
+  border-color: #F2AB91;
+  box-shadow: 0 4px 24px rgba(242, 171, 145, 0.25);
+}
+
+.gif-card--idle {
+  border-color: #F2DB94;
+}
+
+.gif-card__img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+}
+
+.gif-card__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #a08878;
+  letter-spacing: 0.3px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: #fdf0e0;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.gif-card--working .gif-card__label {
+  background: #eef7d0;
+  color: #607a1a;
+}
+
+.gif-card--break .gif-card__label {
+  background: #fdeee8;
+  color: #b05a3a;
+}
+
+/* subtle float */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-5px); }
+}

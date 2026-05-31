@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 28px;
+  background: #fffaf3;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(64, 48, 39, 0.08);
+  width: 340px;
+  margin: 0 auto;
+  font-family: 'Nunito', sans-serif;
+}
+
+.timer-modes {
+  display: flex;
+  gap: 6px;
+  background: #F2DB94;
+  padding: 5px;
+  border-radius: 14px;
+  animation: modes-in 0.3s ease;
+}
+
+@keyframes modes-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mode-btn {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: #403027;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+
+.mode-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.mode-btn.active {
+  background: #ffffff;
+  color: #403027;
+  box-shadow: 0 2px 6px rgba(64, 48, 39, 0.12);
+}
+
+.mode-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.mode-btn:disabled:hover {
+  background: transparent;
+}
+
+/* Ring */
+.timer-ring-wrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-track {
+  fill: none;
+  stroke: #F2DB94;
+  stroke-width: 10;
+}
+
+.ring-progress {
+  fill: none;
+  stroke: #C1D96A;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.9s linear;
+}
+
+.timer-display {
+  font-size: 52px;
+  font-weight: 800;
+  color: #403027;
+  letter-spacing: 2px;
+  font-variant-numeric: tabular-nums;
+  z-index: 1;
+}
+
+/* Controls */
+.timer-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-btn {
+  padding: 11px 26px;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+
+.control-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(64, 48, 39, 0.15);
+}
+
+.control-btn:active {
+  transform: translateY(0);
+}
+
+.start-btn {
+  background: #C1D96A;
+  color: #403027;
+}
+
+.pause-btn {
+  background: #F2AB91;
+  color: #403027;
+}
+
+.reset-btn {
+  background: #F2DB94;
+  color: #403027;
+}
