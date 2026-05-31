@@ -16,11 +16,12 @@ function Landing ({ onSelect }) {
     return (
         <div className="landing-parent-div">
             <img src={CocoDaisy} alt="Landing" className="landingImg" />
+            <p className="landing-title">who are you? ♡</p>
             <button className="landingBtn" onClick={() => pick("coco")}>
-                I am a coco
+                I'm Coco 🐾
             </button>
             <button className="landingBtn" onClick={() => pick("daisy")}>
-                I am a daisy
+                I'm Daisy 🌸
             </button>
         </div>
     )

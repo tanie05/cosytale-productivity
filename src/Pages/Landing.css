@@ -3,11 +3,25 @@
 
 .landing-parent-div{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #cad062;
+    background: linear-gradient(160deg, #fde8ef 0%, #fdf6ec 55%, #deeec8 100%);
     height: 98vh;
     background-image: url("./../assets/cosytales/landingBG.png");
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+}
+
+.landing-title {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #7a5c44;
+    letter-spacing: 0.4px;
+    margin: 0 0 12px;
+    text-align: center;
 }
 
 .landingBtn{
@@ -16,24 +30,25 @@
     color: #7a5c44;
     border: 2.5px solid #d4a882;
     padding: 12px 28px;
-    margin: 10px;
+    margin: 6px;
     cursor: pointer;
     font-size: 15px;
     font-weight: 600;
+    font-family: 'Baloo 2', sans-serif;
     letter-spacing: 0.3px;
     box-shadow: 0 4px 12px rgba(157, 127, 96, 0.25);
     transition: all 0.2s ease;
 }
 
 .landingBtn:hover{
-    background-color: #d4a882;
-    color: white;
-    border-color: #d4a882;
+    background-color: #fdeaef;
+    color: #7a3a55;
+    border-color: #f2a8bc;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(157, 127, 96, 0.35);
+    box-shadow: 0 6px 16px rgba(242, 168, 188, 0.35);
 }
 
 .landingBtn:active{
     transform: translateY(0px);
-    box-shadow: 0 2px 8px rgba(157, 127, 96, 0.25);
+    box-shadow: 0 2px 8px rgba(242, 168, 188, 0.25);
 }

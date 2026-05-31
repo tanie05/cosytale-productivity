@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #D5D96A;
+  background: #d4e8a0;
   padding: 0 24px;
   height: 52px;
   flex-shrink: 0;
@@ -14,7 +14,7 @@
 }
 
 .footer-tagline {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Baloo 2', sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: #403027;
@@ -28,7 +28,7 @@
 }
 
 .footer-name {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Baloo 2', sans-serif;
   font-size: 13px;
   font-weight: 700;
   color: #403027;
@@ -52,7 +52,7 @@
 }
 
 .footer-avatar:hover {
-  border-color: #C1D96A;
+  border-color: #a8c47a;
   transform: scale(1.1);
 }
 
