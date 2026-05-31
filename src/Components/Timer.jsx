@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import "./Timer.css";
+import completionSound from "../assets/cosytales/completion_sound.mp3";
 
 const MODES = {
   pomodoro: { label: "Pomodoro", seconds: 25 * 60 },
@@ -33,6 +34,14 @@ const store = {
 };
 
 const TIMER_KEYS = ["timerMode", "timerRunning", "timerEndTime", "timerPaused"];
+
+// Send a fire-and-forget message to the background service worker.
+// Silently no-ops in a regular browser (npm run dev) where chrome.runtime is absent.
+const notifyWorker = (msg) => {
+  if (typeof chrome !== "undefined" && chrome.runtime?.sendMessage) {
+    chrome.runtime.sendMessage(msg).catch(() => {});
+  }
+};
 
 function applyStoredState(r, setMode, setSecondsLeft, setIsRunning) {
   const m = r.timerMode || "pomodoro";
@@ -113,11 +122,15 @@ function Timer({ onStateChange }) {
     const endTime = Date.now() + secondsLeft * 1000;
     store.set({ timerRunning: true, timerEndTime: endTime, timerMode: mode });
     setIsRunning(true);
+    // Tell the service worker to schedule an alarm at the exact end-time so
+    // the completion sound fires even when this tab is backgrounded or closed.
+    notifyWorker({ type: "TIMER_START", endTime, mode, soundUrl: completionSound });
   };
 
   const pause = () => {
     store.set({ timerRunning: false, timerEndTime: null, timerPaused: secondsLeft });
     setIsRunning(false);
+    notifyWorker({ type: "TIMER_CANCEL" });
   };
 
   const reset = () => {
@@ -125,6 +138,7 @@ function Timer({ onStateChange }) {
     store.set({ timerRunning: false, timerEndTime: null, timerPaused: secs });
     setIsRunning(false);
     setSecondsLeft(secs);
+    notifyWorker({ type: "TIMER_CANCEL" });
   };
 
   const handleModeChange = (newMode) => {
@@ -133,6 +147,7 @@ function Timer({ onStateChange }) {
     setMode(newMode);
     setIsRunning(false);
     setSecondsLeft(secs);
+    notifyWorker({ type: "TIMER_CANCEL" });
   };
 
   useEffect(() => {
