@@ -10,3 +10,7 @@ A cozy productivity app built with React + Vite. Features a dashboard with a foc
 - **Landing Page** — Clean entry point before the dashboard
 
 
+## To use
+- Run `npm run build`
+- Go to `chrome://extensions/` on your browser and click **Load Unpack**
+- Select the `dict` folder and add extension
